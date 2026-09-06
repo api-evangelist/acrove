@@ -1,0 +1,140 @@
+generated: '2026-09-06'
+method: probed
+source: 'Live unauthenticated GET of the named /.well-known/ path list against every host ACROVE, Inc.
+  operates that answers on the public internet: the apex and www of acrove.co.jp (the corporate site),
+  commerce.acrove.co.jp (the Magento / Adobe Commerce arm, formerly Digital-Free K.K. — digital-free.net
+  301s here), and the two login-gated first-party applications found in certificate transparency, mdm.acrove.co.jp
+  (ACROVE MDM) and kb.acrove.co.jp (ACROVE KNOWLEDGE BASE). There is no API baseURL, no OpenAPI servers[]
+  host and no docs/console host to probe, because the company publishes no API. Every path missed. Recorded
+  as an absence: no WellKnown and no SecurityTxt pointer is wired in apis.yml, because nothing here is
+  served.'
+note: acrove.co.jp, www.acrove.co.jp and commerce.acrove.co.jp are WordPress sites on XSERVER and return
+  the theme 404 HTML shell with a hard HTTP 404 on every probed path — verified against the control path
+  /zz-api-evangelist-control-7c21, which returns the identical 404 body and status, so these are true
+  404s and not soft-404 200s. mdm.acrove.co.jp returns an application 404 (6,378 bytes, identical on the
+  control path). kb.acrove.co.jp answers 307 on every path, redirecting to its own login — an authentication
+  wall in front of an internal knowledge base, not a discovery document. No 200 was observed on any probed
+  discovery document on any host.
+x-control-probe:
+  path: /zz-api-evangelist-control-7c21
+  acrove.co.jp: 404
+  commerce.acrove.co.jp: 404
+  mdm.acrove.co.jp: 404
+  kb.acrove.co.jp: 307
+  note: Control path proves the 404s above are real, not a soft-404 catch-all.
+hosts:
+- host: acrove.co.jp
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: www.acrove.co.jp
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: commerce.acrove.co.jp
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: mdm.acrove.co.jp
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: kb.acrove.co.jp
+  documents:
+  - path: /.well-known/security.txt
+    status: 307
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 307
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 307
+    file: null
+  - path: /.well-known/api-catalog
+    status: 307
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 307
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 307
+    file: null
+  - path: /.well-known/agent.json
+    status: 307
+    file: null

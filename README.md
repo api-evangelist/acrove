@@ -64,5 +64,29 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Acrove is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://equityzen.com/company/acrove
+ACROVE, Inc. (株式会社ACROVE) is a Tokyo e-commerce platform and brand roll-up company, founded 15
+November 2018 as Anoma, Inc. and renamed ACROVE in October 2020. It runs a Commerce Transformation
+practice that grows client brand sales on Amazon, Rakuten and other Japanese marketplaces using its
+proprietary EC analytics engine ACROVE FORCE (now ACROVE INSIGHT), and an EC roll-up business that
+acquires and operates consumer brands. Its commerce arm — the former Digital-Free K.K., now
+株式会社Acrove at commerce.acrove.co.jp — is a Magento / Adobe Commerce implementation specialist.
+
+**No public API.** ACROVE FORCE / INSIGHT, ACROVE MDM and the ACROVE Knowledge Base are login-gated
+applications. Every REST / GraphQL / OpenAPI / MCP / agent-card and `/.well-known/` path probed on
+all five hosts the company operates returns a hard 404 (verified against a control path) or a 307 to
+a login. See `x-coverage` in `apis.yml` for the full evidence table.
+
+- Website — https://acrove.co.jp/
+- Company information — https://acrove.co.jp/company/
+- Commerce (Magento / Adobe Commerce) — https://commerce.acrove.co.jp/
+- GitHub organization — https://github.com/Digital-Free (org name "ACROVE,Inc.")
+- Secondary market listing — https://equityzen.com/company/acrove/
+
+### Artifacts in this repo
+
+| File | Method | Source |
+|---|---|---|
+| `llms/acrove-llms.txt` | searched | https://commerce.acrove.co.jp/llms.txt (HTTP 200, Yoast-generated site index) |
+| `llms/acrove-llms.yml` | searched | provenance manifest for the above |
+| `well-known/acrove-well-known.yml` | probed | 7 named `/.well-known/` paths × 5 hosts — all misses, recorded as an absence |
+| `security/acrove-domain-security.yml` | probed | live DNS/TLS/HTTP on acrove.co.jp, commerce., mdm., kb. |

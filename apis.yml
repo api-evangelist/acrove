@@ -1,8 +1,18 @@
 aid: acrove
-name: Acrove
-description: 'Acrove is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: ACROVE, Inc.
+description: >-
+  ACROVE, Inc. (株式会社ACROVE) is a Tokyo e-commerce platform and brand roll-up company, founded 15 November
+  2018 as Anoma, Inc. and renamed ACROVE in October 2020, led by representative director Shunsuke Arai and
+  headquartered in Nishi-Shinjuku. It runs two businesses: a Commerce Transformation practice that grows
+  client brand sales on Amazon, Rakuten, Qoo10 and other Japanese marketplaces using its proprietary EC
+  analytics engine ACROVE FORCE (now presented as ACROVE INSIGHT), and an EC roll-up business that
+  acquires and operates consumer brands. It reports support for 170+ client companies and raised a Series
+  C in September 2024. Its commerce arm — the former Digital-Free K.K., now 株式会社Acrove at
+  commerce.acrove.co.jp — is a Magento / Adobe Commerce implementation specialist. ACROVE FORCE, ACROVE
+  MDM and the ACROVE Knowledge Base are login-gated applications; the company publishes no public API,
+  SDK, webhook surface, machine-readable contract or developer portal on any host it operates.
 url: https://raw.githubusercontent.com/api-evangelist/acrove/refs/heads/main/apis.yml
+image: https://acrove.co.jp/wp/wp-content/themes/site-theme-corp-01/library/images/common/ogp.png
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +22,13 @@ created: '2026-09-06'
 modified: '2026-09-06'
 tags:
 - Company
+- E-commerce
+- Marketplaces
+- Business Intelligence
+- Retail
+- Consumer Brands
+- Adobe Commerce
+- Japan
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +36,96 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/acrove-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/acrove
+  url: https://acrove.co.jp/
+- type: About
+  url: https://acrove.co.jp/about/
+- type: x-company-profile
+  url: https://acrove.co.jp/company/
+- type: Services
+  url: https://acrove.co.jp/service/
+- type: CaseStudies
+  url: https://acrove.co.jp/works/
+- type: x-group-companies
+  url: https://acrove.co.jp/group/
+- type: Blog
+  url: https://acrove.co.jp/news/
+- type: BlogRSS
+  url: https://acrove.co.jp/news/feed/
+- type: Careers
+  url: https://acrove.co.jp/recruit/
+- type: Contact
+  url: https://acrove.co.jp/contact/
+- type: PrivacyPolicy
+  url: https://acrove.co.jp/privacy/
+- type: GitHubOrganization
+  url: https://github.com/Digital-Free
+- type: LinkedIn
+  url: https://jp.linkedin.com/company/anoma-inc
+- type: Twitter
+  url: https://twitter.com/acrove_HR
+- type: x-secondary-market
+  url: https://equityzen.com/company/acrove/
+- type: x-commerce-services
+  url: https://commerce.acrove.co.jp/
+- type: LLMsTxt
+  url: llms/acrove-llms.txt
+x-enrichment:
+  date: '2026-09-06'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    ACROVE, Inc. ships software — the ACROVE FORCE / ACROVE INSIGHT EC analytics engine, ACROVE MDM
+    and the ACROVE Knowledge Base — but only as internal and client-facing end-user applications
+    behind a login, and its entire public surface across acrove.co.jp (a WordPress corporate site of
+    19 pages: about, service, works, company, group, news, recruit, contact, privacy) and
+    commerce.acrove.co.jp (the Magento / Adobe Commerce services arm, formerly Digital-Free K.K.)
+    carries no developer, API, docs or integration link anywhere in the nav, sitemap or llms.txt;
+    every REST/GraphQL/OpenAPI/MCP/agent-card and /.well-known/ path probed on all five hosts the
+    company operates returns a hard 404 (verified against a control path returning the identical 404
+    body and status) or, on kb.acrove.co.jp, a 307 to its own login, and the company markets no API
+    product, so this is an absent developer program rather than a gated one.
+  evidence:
+  - url: https://acrove.co.jp/
+    status: 200
+  - url: https://acrove.co.jp/openapi.json
+    status: 404
+  - url: https://acrove.co.jp/swagger.json
+    status: 404
+  - url: https://acrove.co.jp/api-docs
+    status: 404
+  - url: https://acrove.co.jp/graphql
+    status: 404
+  - url: https://acrove.co.jp/developers
+    status: 404
+  - url: https://acrove.co.jp/llms.txt
+    status: 404
+  - url: https://acrove.co.jp/wp-json/
+    status: 403
+  - url: https://acrove.co.jp/.well-known/agent-card.json
+    status: 404
+  - url: https://acrove.co.jp/.well-known/agent.json
+    status: 404
+  - url: https://acrove.co.jp/.well-known/api-catalog
+    status: 404
+  - url: https://acrove.co.jp/.well-known/security.txt
+    status: 404
+  - url: https://acrove.co.jp/zz-api-evangelist-control-7c21
+    status: 404
+  - url: https://commerce.acrove.co.jp/llms.txt
+    status: 200
+  - url: https://commerce.acrove.co.jp/openapi.json
+    status: 404
+  - url: https://commerce.acrove.co.jp/rest/all/schema?services=all
+    status: 404
+  - url: https://mdm.acrove.co.jp/openapi.json
+    status: 404
+  - url: https://kb.acrove.co.jp/openapi.json
+    status: 307
+  checked: '2026-09-06'
