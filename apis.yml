@@ -1,5 +1,5 @@
 aid: acrove
-name: ACROVE, Inc.
+name: ACROVE
 description: >-
   ACROVE, Inc. (株式会社ACROVE) is a Tokyo e-commerce platform and brand roll-up company, founded 15 November
   2018 as Anoma, Inc. and renamed ACROVE in October 2020, led by representative director Shunsuke Arai and
@@ -138,3 +138,4 @@ x-coverage:
   - url: https://kb.acrove.co.jp/openapi.json
     status: 307
   checked: '2026-09-06'
+x-legal-name: ACROVE, Inc.
