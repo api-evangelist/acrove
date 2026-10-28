@@ -1,4 +1,4 @@
-# Acrove
+# ACROVE
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,29 +64,82 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-ACROVE, Inc. (株式会社ACROVE) is a Tokyo e-commerce platform and brand roll-up company, founded 15
-November 2018 as Anoma, Inc. and renamed ACROVE in October 2020. It runs a Commerce Transformation
-practice that grows client brand sales on Amazon, Rakuten and other Japanese marketplaces using its
-proprietary EC analytics engine ACROVE FORCE (now ACROVE INSIGHT), and an EC roll-up business that
-acquires and operates consumer brands. Its commerce arm — the former Digital-Free K.K., now
-株式会社Acrove at commerce.acrove.co.jp — is a Magento / Adobe Commerce implementation specialist.
+ACROVE, Inc. (株式会社ACROVE) is a Tokyo e-commerce platform and brand roll-up company, founded 15 November 2018 as Anoma, Inc. and renamed ACROVE in October 2020, led by representative director Shunsuke Arai and headquartered in Nishi-Shinjuku. It runs two businesses: a Commerce Transformation practice that grows client brand sales on Amazon, Rakuten, Qoo10 and other Japanese marketplaces using its proprietary EC analytics engine ACROVE FORCE (now presented as ACROVE INSIGHT), and an EC roll-up business that acquires and operates consumer brands. It reports support for 170+ client companies and raised a Series C in September 2024. Its commerce arm — the former Digital-Free K.K., now 株式会社Acrove at commerce.acrove.co.jp — is a Magento / Adobe Commerce implementation specialist. ACROVE FORCE, ACROVE MDM and the ACROVE Knowledge Base are login-gated applications; the company publishes no public API, SDK, webhook surface, machine-readable contract or developer portal on any host it operates.
 
-**No public API.** ACROVE FORCE / INSIGHT, ACROVE MDM and the ACROVE Knowledge Base are login-gated
-applications. Every REST / GraphQL / OpenAPI / MCP / agent-card and `/.well-known/` path probed on
-all five hosts the company operates returns a hard 404 (verified against a control path) or a 307 to
-a login. See `x-coverage` in `apis.yml` for the full evidence table.
+**Areas:** Company · E-Commerce · Marketplace · Business Intelligence · Retail · Consumer Brand · Adobe Commerce · Japan
 
-- Website — https://acrove.co.jp/
-- Company information — https://acrove.co.jp/company/
-- Commerce (Magento / Adobe Commerce) — https://commerce.acrove.co.jp/
-- GitHub organization — https://github.com/Digital-Free (org name "ACROVE,Inc.")
-- Secondary market listing — https://equityzen.com/company/acrove/
+## ACROVE on APIs.io
 
-### Artifacts in this repo
+Everything profiled for ACROVE is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/acrove/](https://apis.io/providers/acrove/)** — or go straight to one of the APIs or properties below.
 
-| File | Method | Source |
-|---|---|---|
-| `llms/acrove-llms.txt` | searched | https://commerce.acrove.co.jp/llms.txt (HTTP 200, Yoast-generated site index) |
-| `llms/acrove-llms.yml` | searched | provenance manifest for the above |
-| `well-known/acrove-well-known.yml` | probed | 7 named `/.well-known/` paths × 5 hosts — all misses, recorded as an absence |
-| `security/acrove-domain-security.yml` | probed | live DNS/TLS/HTTP on acrove.co.jp, commerce., mdm., kb. |
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Acrove Domain Security](https://apis.io/security/acrove/acrove-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://acrove.co.jp/)
+- [Blog](https://acrove.co.jp/news/)
+- [Privacy policy](https://acrove.co.jp/privacy/)
+- [GitHub](https://github.com/Digital-Free)
+
+## API Evangelist rating
+
+**Kin Score 7.7** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 2.4 |
+| Access clarity | 10.5 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 9.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/acrove/](https://apis.io/providers/acrove/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for ACROVE: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/acrove/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
